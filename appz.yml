@@ -1,18 +1,18 @@
 app:
   name: Tomcat Loadgen
   code: TCLG
-  notify: krishnan.rejith@gmail.com
+  notify: ssankar@ecloudcontrol.com
 
 build:
   version: 0.3
-  env: PROD
+  env: DEV2
   build_file: pom.xml
   output_files: output/*.war
   image_template: tomcat9
 
 deploy:
-  context: vv/PROD
-  replicas: 4
+  context: alpha/DEV2
+  replicas: 1
   port: 8080
   strategy : rolling
   ready_seconds : 45
@@ -26,5 +26,5 @@ properties:
   download: true
   random : true
   nano : 420
-
+  revision : 0
 
